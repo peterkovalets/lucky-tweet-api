@@ -1,0 +1,9 @@
+spring:
+  application:
+    name: lucky-tweet-api
+
+  lifecycle:
+    timeout-per-shutdown-phase: 30s
+
+server:
+  shutdown: graceful
