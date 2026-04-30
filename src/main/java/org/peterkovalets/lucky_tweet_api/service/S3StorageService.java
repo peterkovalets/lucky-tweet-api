@@ -2,7 +2,6 @@ package org.peterkovalets.lucky_tweet_api.service;
 
 import org.peterkovalets.lucky_tweet_api.common.enums.StorageBucket;
 import org.peterkovalets.lucky_tweet_api.common.exceptions.StorageException;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 import software.amazon.awssdk.core.sync.RequestBody;
@@ -18,7 +17,6 @@ public class S3StorageService implements StorageService {
 
     private final S3Client s3Client;
 
-    @Autowired
     public S3StorageService(S3Client s3Client) {
         this.s3Client = s3Client;
     }

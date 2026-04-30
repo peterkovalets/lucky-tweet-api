@@ -2,7 +2,6 @@ package org.peterkovalets.lucky_tweet_api.rest;
 
 import org.peterkovalets.lucky_tweet_api.common.enums.StorageBucket;
 import org.peterkovalets.lucky_tweet_api.service.StorageService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -17,7 +16,6 @@ public class FileUploadController {
 
     private final StorageService storageService;
 
-    @Autowired
     public FileUploadController(StorageService storageService) {
         this.storageService = storageService;
     }

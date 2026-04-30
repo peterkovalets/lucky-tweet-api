@@ -2,6 +2,11 @@ spring:
   application:
     name: lucky-tweet-api
 
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+
   lifecycle:
     timeout-per-shutdown-phase: 30s
 
