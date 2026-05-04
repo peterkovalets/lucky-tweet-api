@@ -12,3 +12,9 @@ spring:
 
 server:
   shutdown: graceful
+
+jwt:
+  expiration: 604800000
+
+cookie:
+  max-age: 604800
