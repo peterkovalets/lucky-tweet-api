@@ -13,7 +13,7 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 @Service
-public class UserService {
+public class AuthService {
 
     private final UserRepository userRepository;
     private final PasswordEncoder passwordEncoder;
@@ -26,7 +26,7 @@ public class UserService {
     @Value("${cookie.max-age}")
     private int cookieMaxAge;
 
-    public UserService(UserRepository userRepository, PasswordEncoder passwordEncoder,
+    public AuthService(UserRepository userRepository, PasswordEncoder passwordEncoder,
                        AuthenticationManager authenticationManager, JWTService jwtService) {
         this.userRepository = userRepository;
         this.passwordEncoder = passwordEncoder;

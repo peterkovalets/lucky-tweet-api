@@ -33,4 +33,12 @@ public class UserPrincipal implements UserDetails {
     public String getUsername() {
         return user.getUsername();
     }
+
+    public String getEmail() {
+        return user.getEmail();
+    }
+
+    public String getAvatarUrl() {
+        return user.getAvatarUrl();
+    }
 }
