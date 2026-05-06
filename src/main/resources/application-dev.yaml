@@ -1,2 +1,8 @@
+spring:
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+
 cookie:
   secure: false
