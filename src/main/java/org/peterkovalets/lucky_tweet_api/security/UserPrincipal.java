@@ -34,6 +34,10 @@ public class UserPrincipal implements UserDetails {
         return user.getUsername();
     }
 
+    public User getUser() {
+        return user;
+    }
+
     public String getEmail() {
         return user.getEmail();
     }
