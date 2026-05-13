@@ -27,6 +27,12 @@ public class GlobalExceptionHandler {
                 .body(ErrorResponse.of(400, message));
     }
 
+    @ExceptionHandler(PostNotFoundException.class)
+    public ResponseEntity<ErrorResponse> handlePostNotFound(PostNotFoundException e) {
+        return ResponseEntity.status(HttpStatus.NOT_FOUND)
+                .body(ErrorResponse.of(404, e.getMessage()));
+    }
+
     @ExceptionHandler(StorageException.class)
     public ResponseEntity<ErrorResponse> handleStorage(StorageException e) {
         return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
