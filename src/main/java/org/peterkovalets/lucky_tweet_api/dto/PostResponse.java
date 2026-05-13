@@ -9,6 +9,8 @@ public record PostResponse(
     String content,
     String thumbnailUrl,
     String authorUsername,
-    Instant createdAt
+    String authorAvatarUrl,
+    Instant createdAt,
+    Instant updatedAt
 ) {
 }
