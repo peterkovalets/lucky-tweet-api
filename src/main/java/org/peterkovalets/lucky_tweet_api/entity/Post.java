@@ -5,15 +5,14 @@ import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 
 import java.time.Instant;
-import java.util.UUID;
 
 @Entity
 @Table(name = "posts")
 public class Post {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.UUID)
-    private UUID id;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
 
     @Column(nullable = false)
     private String title;
@@ -44,7 +43,7 @@ public class Post {
         this.user = user;
     }
 
-    public UUID getId() {
+    public Long getId() {
         return id;
     }
 

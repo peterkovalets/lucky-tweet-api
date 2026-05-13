@@ -1,10 +1,9 @@
 package org.peterkovalets.lucky_tweet_api.dto;
 
 import java.time.Instant;
-import java.util.UUID;
 
 public record PostResponse(
-    UUID id,
+    Long id,
     String title,
     String content,
     String thumbnailUrl,
