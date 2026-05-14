@@ -36,6 +36,12 @@ public class AuthController {
         return ResponseEntity.ok().build();
     }
 
+    @PostMapping("/logout")
+    public ResponseEntity<Void> logout(HttpServletResponse response) {
+        authService.logout(response);
+        return ResponseEntity.ok().build();
+    }
+
     @GetMapping("/profile")
     public ResponseEntity<UserProfileResponse> getUserProfile(
         @AuthenticationPrincipal UserPrincipal principal

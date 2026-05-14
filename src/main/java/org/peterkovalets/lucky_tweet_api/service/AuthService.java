@@ -40,22 +40,26 @@ public class AuthService {
             request.email(),
             passwordEncoder.encode(request.password())
         ));
-        setAuthCookie(response, jwtService.generateToken(request.username()));
+        setAuthCookie(response, jwtService.generateToken(request.username()), cookieMaxAge);
     }
 
     public void verify(LoginRequest request, HttpServletResponse response) {
         authenticationManager.authenticate(
             new UsernamePasswordAuthenticationToken(request.username(), request.password())
         );
-        setAuthCookie(response, jwtService.generateToken(request.username()));
+        setAuthCookie(response, jwtService.generateToken(request.username()), cookieMaxAge);
     }
 
-    private void setAuthCookie(HttpServletResponse response, String token) {
+    public void logout(HttpServletResponse response) {
+        setAuthCookie(response, null, 0);
+    }
+
+    private void setAuthCookie(HttpServletResponse response, String token, int maxAge) {
         Cookie cookie = new Cookie("token", token);
         cookie.setHttpOnly(true);
         cookie.setSecure(cookieSecure);
         cookie.setPath("/");
-        cookie.setMaxAge(cookieMaxAge);
+        cookie.setMaxAge(maxAge);
         cookie.setAttribute("SameSite", "Strict");
         response.addCookie(cookie);
     }
