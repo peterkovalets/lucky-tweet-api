@@ -22,6 +22,9 @@ public class Post {
 
     private String thumbnailUrl;
 
+    @Column(nullable = false)
+    private boolean edited = false;
+
     @CreationTimestamp
     @Column(nullable = false, updatable = false)
     private Instant createdAt;
@@ -71,6 +74,14 @@ public class Post {
         this.thumbnailUrl = thumbnailUrl;
     }
 
+    public boolean isEdited() {
+        return edited;
+    }
+
+    public void setEdited(boolean edited) {
+        this.edited = edited;
+    }
+
     public Instant getCreatedAt() {
         return createdAt;
     }
@@ -93,6 +104,7 @@ public class Post {
                 "id='" + id + '\'' +
                 ", title='" + title + '\'' +
                 ", thumbnailUrl='" + thumbnailUrl + '\'' +
+                ", edited=" + edited +
                 ", createdAt=" + createdAt +
                 ", updatedAt=" + updatedAt +
                 '}';

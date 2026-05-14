@@ -46,6 +46,7 @@ public class PostService {
             post.getThumbnailUrl(),
             post.getUser().getUsername(),
             post.getUser().getAvatarUrl(),
+            post.isEdited(),
             post.getCreatedAt(),
             post.getUpdatedAt()
         );
